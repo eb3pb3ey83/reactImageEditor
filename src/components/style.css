@@ -1,0 +1,128 @@
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: '微軟正黑體';
+  overflow-x: hidden;
+}
+#uploadImg {
+  background: #fff;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.root {
+  position: relative;
+  text-align: center;
+  transition: background .7s;
+}
+.drag__scroll{
+  box-sizing: border-box;
+  position: relative;
+  font-size: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+.content{
+  position: absolute;
+  left: 0px;
+  top: 0px; 
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  overflow: hidden;
+  text-align: right;
+  outline: 3px solid #61dafb;
+  transition: outline .3s;
+}
+.content.circle {
+  border-radius: 50%;  
+}
+.content.circle:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #61dafb;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.img_outside {
+  position: absolute;
+  opacity: .4;
+  top: 0;
+  left: 0;
+}
+.now_allow-drag {
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: -moz-none;
+  -moz-user-drag: -moz-none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; 
+  -ms-user-darg: none; 
+}
+canvas {
+  display: none;
+}
+.img_clone {
+  position: absolute;
+  left: -10000px;
+}
+.img_inside {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.control_bar {
+  position: absolute;
+  padding: 10px 0;
+  background: #fff;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  z-index: 3;
+  width: 150px;
+  box-sizing: border-box;
+  visibility: hidden;
+  transition: .3s;
+}
+.control_bar.active {
+  visibility: visible;
+}
+.control_bar > label {
+  margin: 0;
+  width: 70%; 
+  overflow: hidden;
+  text-align: right;
+  padding-right: 10px;
+  box-sizing: border-box;
+  margin-bottom: 3px; 
+}
+.control_bar > input {
+  width: 20%;
+  text-align: left;
+  margin-bottom: 3px; 
+}
+.control_bar > input[type="text"] {
+  border: 0;
+}
+.control_bar > input[type="checkbox"] {
+  width: 10%;
+}
+.control_bar > a {
+  display: block;
+  font-weight: bold;
+  margin: 7px auto;
+}
